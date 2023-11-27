@@ -1,3 +1,8 @@
+/*
+ * File: 100-elf_header.c
+ * Auth: Brennan D Baraban
+ */
+
 #include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -130,15 +135,15 @@ void print_version(unsigned char *e_ident)
 		break;
 	}
 }
-OB
-OB/**
-OB * print_osabi - Prints the OS/ABI of an ELF header.
+
+/**
+ * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
  */
 void print_osabi(unsigned char *e_ident)
 {
 	printf("  OS/ABI:                            ");
-OB
+
 	switch (e_ident[EI_OSABI])
 	{
 	case ELFOSABI_NONE:
